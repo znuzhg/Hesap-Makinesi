@@ -12,14 +12,14 @@ Bu proje, Python kullanarak sıfırdan başlayıp adım adım ilerleyerek hazır
 
 Aşağıdaki tablo, projedeki klasörlerin ne işe yaradığını göstermektedir:
 
-|--------------------------|----------------------------------------------------------------------------------|
+
 | 📂 **Klasör**            | 📝 **Açıklama**                                                                 |
 |--------------------------|----------------------------------------------------------------------------------|
 | **İlk Kod/**             | Konsolda çalışan en temel, başlangıç versiyonu.                                  |
 | **Geliştirme aşaması/**  | Modüler yapı (menu.py, utils.py, islemler.py), hata kontrolleri, temiz kodlama.  |
 | **Geliştirme 2 GUI/**    | Tkinter ile hazırlanmış çalışan grafik arayüz (butonlar, işlemler, C, =).        |
 | **Son Hali EXE/**        | PyInstaller ile üretilmiş **Hesap Makinesi V1.exe** dosyası.                     |
-|--------------------------|----------------------------------------------------------------------------------|
+
 
 ---
 
