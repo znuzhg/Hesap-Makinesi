@@ -21,143 +21,60 @@ ekran.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 def tus_bas(rakam):
     ekran.insert(tk.END, rakam)
 
+# hesaplama fonksiyonu
+def hesapla():
+    try:
+        ifade = ekran.get().replace("x","*")
+        sonuc = eval(ifade)
+        ekran.delete(0,tk.END)
+        ekran.insert(tk.END, str(sonuc))
+    except:
+        ekran.delete(0, tk.END)
+        ekran.insert(tk.END, "HATA")
+
+# c tuşu için temizleme
+def temizle():
+    ekran.delete(0,tk.END)
+
 # === BUTONLAR ===
+#---------------------------------------------------------------------------------------------
+# Rakamlar için satır ve kolon düzenini kod gelişmeden önde öğrendik ve not aldık
+# Şimdi ise kod çok uzun ve karmaşık gözüküyor kodu for döngüsü ile kodu kısaltabiliriz
+rakamlar = [
+    ("7", 1, 0),
+    ("8", 1, 1),
+    ("9", 1, 2),
+    ("4", 2, 0),
+    ("5", 2, 1),
+    ("6", 2, 2),
+    ("1", 3, 0),
+    ("2", 3, 1),
+    ("3", 3, 2),
+    ("0", 4, 1)
+]
 
-buton_1 = tk.Button(
-    pencere,
-    text="1",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("1")
-)
-buton_1.grid(row=3, column=0, padx=5, pady=5)
+for (rakam, row, col) in rakamlar:
+    Sayi_Butonlari = tk.Button(
+        pencere,
+        text=rakam,
+        font=("Arial", 15),
+        width=4,
+        height=2,
+        bg="white",
+        fg="black",
+        bd=3,
+        command=lambda r=rakam: tus_bas(r)
 
+    )
+    Sayi_Butonlari.grid(row=row,column=col, padx=5, pady=5)
+#---------------------------------------------------------------------------------------------
 
-buton_2 = tk.Button(
-    pencere,
-    text="2",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("2")
-)
-buton_2.grid(row=3, column=1, padx=5, pady=5)
+#  ----------------------------------
+# | *** işlem oparetör tuşları ***   |
+#  ----------------------------------
 
-buton_3 = tk.Button(
-    pencere,
-    text="3",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("3")
-)
-buton_3.grid(row=3, column=2, padx=5, pady=5)
-
-buton_4 = tk.Button(
-    pencere,
-    text="4",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("4")
-)
-buton_4.grid(row=2, column=0, padx=5, pady=5)
-
-
-buton_5 = tk.Button(
-    pencere,
-    text="5",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("5")
-)
-buton_5.grid(row=2, column=1, padx=5, pady=5)
-
-buton_6 = tk.Button(
-    pencere,
-    text="6",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("6")
-)
-buton_6.grid(row=2, column=2, padx=5, pady=5)
-
-buton_7 = tk.Button(
-    pencere,
-    text="7",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("7")
-)
-buton_7.grid(row=1, column=0, padx=5, pady=5)
-
-
-buton_8 = tk.Button(
-    pencere,
-    text="8",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("8")
-)
-buton_8.grid(row=1, column=1, padx=5, pady=5)
-
-buton_9 = tk.Button(
-    pencere,
-    text="9",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("9")
-)
-buton_9.grid(row=1, column=2, padx=5, pady=5)
-
-buton_0 = tk.Button(
-    pencere,
-    text="0",
-    font=("Arial", 15),
-    width=4,
-    height=2,
-    bg="white",
-    fg="black",
-    bd=3,
-    command=lambda: tus_bas("0")
-)
-buton_0.grid(row=4, column=1, padx=5, pady=5)
-
-# işlem oparetör tuşları
-
+# --- Toplama ---
+#------------------------------------------------------------------------
 buton_toplama = tk.Button(
     pencere,
     text="+",
@@ -170,7 +87,9 @@ buton_toplama = tk.Button(
     command=lambda: tus_bas("+")
 )
 buton_toplama.grid(row=4, column=3, padx=5, pady=5)
-
+#------------------------------------------------------------------------
+# --- Çıkarma ---
+#------------------------------------------------------------------------
 buton_cikarma = tk.Button(
     pencere,
     text="-",
@@ -183,7 +102,9 @@ buton_cikarma = tk.Button(
     command=lambda: tus_bas("-")
 )
 buton_cikarma.grid(row=3, column=3, padx=5, pady=5)
-
+#------------------------------------------------------------------------
+# --- Çarpma ---
+#------------------------------------------------------------------------
 buton_carpma = tk.Button(
     pencere,
     text="x",
@@ -196,7 +117,9 @@ buton_carpma = tk.Button(
     command=lambda: tus_bas("x")
 )
 buton_carpma.grid(row=2, column=3, padx=5, pady=5)
-
+#------------------------------------------------------------------------
+# --- Bölme ---
+#------------------------------------------------------------------------
 buton_bolme = tk.Button(
     pencere,
     text="/",
@@ -209,9 +132,9 @@ buton_bolme = tk.Button(
     command=lambda: tus_bas("/")
 )
 buton_bolme.grid(row=1, column=3, padx=5, pady=5)
-# c tuşu ekran temizleme fonksiyonu
-def temizle():
-    ekran.delete(0,tk.END)
+#------------------------------------------------------------------------
+# --- Temizleme Butonu ---
+#------------------------------------------------------------------------
 buton_c = tk.Button(
     pencere,
     text="c",
@@ -224,19 +147,9 @@ buton_c = tk.Button(
     command=lambda: temizle()
 )
 buton_c.grid(row=4, column=0, padx=5, pady=5)
-
-# hesaplama fonksiyonu
-def hesapla():
-    try:
-        ifade = ekran.get()
-        if "x" in ifade:
-            ifade = ifade.replace("x","*")
-        sonuc = eval(ifade)
-        ekran.delete(0,tk.END)
-        ekran.insert(tk.END, str(sonuc))
-    except:
-        ekran.delete(0, tk.END)
-        ekran.insert(tk.END, "HATA")
+#------------------------------------------------------------------------
+# --- Eşittir ---
+#------------------------------------------------------------------------
 buton_hesaplama = tk.Button(
     pencere,
     text="=",
@@ -249,5 +162,5 @@ buton_hesaplama = tk.Button(
     command=lambda: hesapla()
 )
 buton_hesaplama.grid(row=4, column=2, padx=5, pady=5)
-
+#------------------------------------------------------------------------
 pencere.mainloop()
