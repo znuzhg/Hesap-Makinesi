@@ -75,27 +75,6 @@ Kullanılan PyInstaller komutu:
 
 pyinstaller --onefile --noconsole gui.py
 
-yaml
-Kodu kopyala
-
-Oluşan `.exe` dosyası **Son Hali EXE/** klasörüne taşınmıştır.
-
----
-
-## 📤 Projeyi Çalıştırma
-
-### Konsol Sürümü
-python main.py
-
-shell
-Kodu kopyala
-
-### GUI Sürümü
-python gui.py
-
-yaml
-Kodu kopyala
-
 ---
 
 ## 💬 Geliştirici Notu
