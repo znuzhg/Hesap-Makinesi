@@ -1,91 +1,115 @@
-📌 Python ile Konsol + GUI Hesap Makinesi Projesi
+# 🧮 Python Hesap Makinesi Projesi
 
-Bu proje, Python kullanarak geliştirdiğim konsol tabanlı ve Tkinter GUI tabanlı bir hesap makinesinin tam gelişim sürecini içermektedir.
-Temelden başlayarak, adım adım GUI’ye geçiş, hata kontrolü, fonksiyon yapıları ve en sonunda .EXE uygulamasına dönüştürme aşamalarını kapsamaktadır.
+**Konsol → Modüler Kod → GUI (Tkinter) → EXE**  
+Tam bir yazılım geliştirme süreci örneğidir.
 
-📁 Proje Klasör Yapısı
-Klasör	Açıklama
-İlk Kod/	Projeye ilk başladığım konsol versiyonunun temel hali.
-Geliştirme aşaması/	Fonksiyonların ayrılması (utils, menu, islemler), temiz kodlama, hata kontrolleri yapılan orta seviye sürüm.
-Geliştirme 2 GUI/	Tkinter kullanarak oluşturduğum grafik arayüzlü hesap makinesi. Rakam tuşları, operatörler ve “=” dâhil tüm butonlar çalışır.
-Son Hali EXE/	PyInstaller ile oluşturulmuş çalışabilir Hesap Makinesi V1.exe dosyası.
-🎯 Projenin Amacı
+Bu proje, Python kullanarak sıfırdan başlayıp adım adım ilerleyerek hazırladığım hesap makinesi uygulamasının tüm gelişim aşamalarını içerir.  
+İlk konsol sürümünden başlayıp, modüllere ayrılmış temiz koda geçtim, ardından Tkinter GUI tasarladım ve son aşamada projeyi **.exe uygulamasına** dönüştürdüm.
 
-Bu projede amaç:
+---
 
-Python’da fonksiyonları etkin kullanmak
+## 📁 Proje Klasör Yapısı
 
-Hata yönetimi (try/except)
+Aşağıdaki tablo, projedeki klasörlerin ne işe yaradığını göstermektedir:
 
-Modüler programlama (menu.py, utils.py, islemler.py)
+|--------------------------|----------------------------------------------------------------------------------|
+| 📂 **Klasör**            | 📝 **Açıklama**                                                                 |
+|--------------------------|----------------------------------------------------------------------------------|
+| **İlk Kod/**             | Konsolda çalışan en temel, başlangıç versiyonu.                                  |
+| **Geliştirme aşaması/**  | Modüler yapı (menu.py, utils.py, islemler.py), hata kontrolleri, temiz kodlama.  |
+| **Geliştirme 2 GUI/**    | Tkinter ile hazırlanmış çalışan grafik arayüz (butonlar, işlemler, C, =).        |
+| **Son Hali EXE/**        | PyInstaller ile üretilmiş **Hesap Makinesi V1.exe** dosyası.                     |
+|--------------------------|----------------------------------------------------------------------------------|
 
-Tkinter ile GUI geliştirme
+---
 
-Konsol uygulamasını GUI uygulamasına yükseltme
+## 🎯 Projenin Amacı
 
-PyInstaller ile EXE üretmek
+Bu projede hedeflenen yazılım geliştirme becerileri:
 
-🧮 Konsol Versiyonu Özellikleri
+- Fonksiyonları etkili şekilde kullanmak  
+- `try/except` ile hata yönetimi  
+- Modüler Python yapısı  
+- Tkinter ile GUI oluşturmak  
+- Konsol uygulamasını GUI uygulamasına dönüştürmek  
+- PyInstaller ile EXE üretmek  
 
-✔ Toplama
-✔ Çıkarma
-✔ Çarpma
-✔ Bölme (Sıfıra bölme kontrolü ile)
-✔ Kare Alma
-✔ Karekök (Negatif sayı hata kontrolü ile)
-✔ Temiz float gösterimi (1.0 yerine 1 yazdırma)
+---
 
-🖥️ GUI (Tkinter) Versiyonu Özellikleri
+## 🧮 Konsol Versiyonu Özellikleri
 
-✔ Modern pencere tasarımı
-✔ Siyah ekran – beyaz tuşlar
-✔ Buton basıldığında ekrana otomatik yazma
-✔ +, -, x, / operatör tuşları
-✔ C (temizle) tuşu
-✔ = ile işlem sonucunu hesaplama
-✔ Hataları ekrana "HATA" olarak yansıtma
+✔ Toplama  
+✔ Çıkarma  
+✔ Çarpma  
+✔ Bölme (Sıfıra bölme kontrolüyle)  
+✔ Kare alma  
+✔ Karekök (negatif sayı kontrolüyle)  
+✔ Temiz float gösterimi (`1.0` → `1`)
 
-⚙️ Kullanılan Teknolojiler
+---
 
-Python 3.11
+## 🖥️ GUI (Tkinter) Versiyonu Özellikleri
 
-Tkinter (GUI)
+✔ Modern pencere tasarımı  
+✔ Siyah ekran – beyaz tuşlar  
+✔ Basılan tuşun ekrana otomatik yazılması  
+✔ +, -, x, / operatör tuşları  
+✔ C (Temizle) butonu  
+✔ "=" ile işlem hesaplama  
+✔ Hatalı işlemde ekrana **"HATA"** yazdırma  
 
-Math kütüphanesi
+---
 
-PyInstaller (EXE çevrim)
+## ⚙️ Kullanılan Teknolojiler
 
-📌 EXE Nasıl Oluşturuldu?
+- Python 3.11  
+- Tkinter (GUI)  
+- Math kütüphanesi  
+- PyInstaller (EXE oluşturma)
 
-Aşağıdaki komut kullanıldı:
+---
+
+## 📌 EXE Nasıl Oluşturuldu?
+
+Kullanılan PyInstaller komutu:
 
 pyinstaller --onefile --noconsole gui.py
 
+yaml
+Kodu kopyala
 
-Oluşan .exe dosyası Son Hali EXE/ klasörünün içine taşındı.
+Oluşan `.exe` dosyası **Son Hali EXE/** klasörüne taşınmıştır.
 
-📤 Projeyi Çalıştırma
-Konsol versiyonu:
+---
+
+## 📤 Projeyi Çalıştırma
+
+### Konsol Sürümü
 python main.py
 
-GUI versiyonu:
+shell
+Kodu kopyala
+
+### GUI Sürümü
 python gui.py
 
-📷 Ekran Görüntüsü
+yaml
+Kodu kopyala
 
-(İstersen buraya GUI ekran resmini ekleyebilirsin.)
+---
 
-📎 Proje Linki
+## 💬 Geliştirici Notu
+
+Bu proje, bir yazılımın **temelden profesyonele** ilerleyiş sürecinin tam örneğidir:
+
+**Konsol → Modüler Python → GUI (Tkinter) → EXE**
+
+Eğitim ve kişisel gelişim amacıyla hazırlanmış olup geliştirilmeye açıktır.
+
+---
+
+## 📎 Proje Linki
 
 👉 https://github.com/znuzhg/Hesap-Makinesi
 
-(Hocaya vereceğin link budur.)
-
-💬 Geliştirici Notu
-
-Bu proje, temelden gelişime doğru ilerleyen bir öğrenme sürecinin tamamını içerir.
-Önce konsol, sonra modüller, ardından GUI ve en son EXE dönüşümü ile proje bir yazılım geliştirme sürecini tam olarak anlatmaktadır.
-
-📌 Lisans
-
-Bu proje eğitim ve kişisel gelişim amaçlıdır.
+---
