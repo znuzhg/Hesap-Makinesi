@@ -229,6 +229,8 @@ buton_c.grid(row=4, column=0, padx=5, pady=5)
 def hesapla():
     try:
         ifade = ekran.get()
+        if "x" in ifade:
+            ifade = ifade.replace("x","*")
         sonuc = eval(ifade)
         ekran.delete(0,tk.END)
         ekran.insert(tk.END, str(sonuc))
